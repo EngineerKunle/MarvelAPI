@@ -8,11 +8,20 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.android.tools.build:gradle:3.5.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+}
+
+ext {
+    rxAndroidVersion = '2.1.1'
+    rxJavaVersion    = '2.2.16'
+    daggerVersion    = '2.25.4'
+    retrofitVersion  = '2.7.0'
+    okHttpVersion    = '4.2.2'
+    gsonVersion      = '2.8.6'
 }
 
 allprojects {
