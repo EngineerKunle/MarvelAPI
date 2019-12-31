@@ -5,10 +5,11 @@ import com.ekotech.di.AppComponent
 import com.ekotech.di.DaggerAppComponent
 
 class MarvelAPIApplication: Application() {
-    lateinit var appComponent: AppComponent
+    private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
-        appComponent = DaggerAppComponent.create()
+        appComponent = DaggerAppComponent.factory().create(this)
+        appComponent.inject(this)
         super.onCreate()
     }
 }
