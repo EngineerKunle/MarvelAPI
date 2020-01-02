@@ -6,6 +6,10 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+def marvelAPIKeyFile = rootProject.file("apikey.properties")
+def apiKeyProperties = new Properties()
+apiKeyProperties.load(new FileInputStream(marvelAPIKeyFile))
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -16,6 +20,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "MARVEL_URL", '"https://gateway.marvel.com:443/v1/public"')
+        buildConfigField("String", "MARVEL_API", apiKeyProperties['API_KEY'])
     }
     buildTypes {
         release {

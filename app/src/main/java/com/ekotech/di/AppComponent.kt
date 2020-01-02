@@ -1,6 +1,7 @@
 package com.ekotech.di
 
 import android.app.Application
+import com.ekotech.api.NetworkOptions
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

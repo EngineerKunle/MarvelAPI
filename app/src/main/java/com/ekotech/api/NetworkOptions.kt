@@ -1,8 +1,9 @@
 package com.ekotech.api
 
+//TODO: Use this for network params
 data class NetworkOptions(
-    private var apiKey: String,
-    private var hash: String,
-    private var timeStamp: Int,
-    private var offSet: Int
+    val apiKey: String,
+    val hash: String,
+    val timeStamp: Int,
+    val offSet: Int
 )
