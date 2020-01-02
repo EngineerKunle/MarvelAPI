@@ -87,3 +87,6 @@ lint/tmp/
 
 # OSX files
 .DS_Store
+
+#API key
+apikey.properties

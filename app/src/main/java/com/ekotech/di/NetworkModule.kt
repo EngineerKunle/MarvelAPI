@@ -7,7 +7,7 @@ import dagger.Provides
 import dagger.Reusable
 
 @Module
-class AppModule {
+class NetworkModule {
     @Provides
     @Reusable
     fun providesMarvelAPI(marvelAPI: MarvelAPI): AppAPI = marvelAPI
