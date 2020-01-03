@@ -1,9 +1,11 @@
 package com.ekotech.utils
 
 import java.io.UnsupportedEncodingException
+import java.lang.Exception
 import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
-fun String.convertToMD5(): String? {
+fun String.convertToMD5(): String {
     try {
         val md = MessageDigest.getInstance("MD5")
         val array = md.digest(this.toByteArray())
@@ -12,8 +14,8 @@ fun String.convertToMD5(): String? {
             sb.append(Integer.toHexString(array[i].toInt() and 0xFF or 0x100).substring(1, 3))
         }
         return sb.toString()
-    } catch (e: java.security.NoSuchAlgorithmException) {
+    } catch (e: NoSuchAlgorithmException) {
     } catch (ex: UnsupportedEncodingException) {
     }
-    return null
+    throw Exception("Could not convert String to MD5 Hash")
 }
