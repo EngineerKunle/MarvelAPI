@@ -5,7 +5,7 @@ import org.junit.Test
 
 class MDHashUtilsTest {
     @Test
-    fun convertToMD5_Successful() {
+    fun `convert to MD5 Successful`() {
         val mockAPIKey = "MOCKEDAPIKEYS"
         val privateMockedPrivateKey = "privateK3y"
         val mockedTimestamp = 1
