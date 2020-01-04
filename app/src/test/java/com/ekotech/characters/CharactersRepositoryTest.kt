@@ -19,7 +19,7 @@ class CharactersRepositoryTest {
     private val charactersRepository = CharactersRepository(appAPI, options)
 
     @Test
-    fun `get characters success`() {
+    fun `GET characters success`() {
         //given
         every {
             appAPI.createRetrofitClient()
@@ -45,7 +45,7 @@ class CharactersRepositoryTest {
     }
 
     @Test
-    fun `get characters failed`() {
+    fun `GET characters failed`() {
         //given
         every {
             appAPI.createRetrofitClient()
