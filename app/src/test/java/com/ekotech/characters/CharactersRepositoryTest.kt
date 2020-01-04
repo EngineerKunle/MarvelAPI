@@ -39,8 +39,8 @@ class CharactersRepositoryTest {
         //then
         result.assertValue(charactersDTO)
         result.assertValue {
-            it.data.results[0].thumbnail.extension == "mock/../"
-            it.data.results[0].thumbnail.path == "path/mock"
+            it.data.results[0].thumbnail.extension == EXTENSION
+            it.data.results[0].thumbnail.path == PATH
         }
     }
 
@@ -67,7 +67,9 @@ class CharactersRepositoryTest {
     }
 
     companion object {
-        private val thumbnail = Thumbnail(extension = "mock/../", path = "path/mock")
+        private const val EXTENSION = "mock/../"
+        private const val PATH = "path/mock"
+        private val thumbnail = Thumbnail(extension = EXTENSION, path = PATH)
         private val result = Result(description = "Marvel", id = 1, thumbnail = thumbnail)
         private val data = Data(results = listOf(result))
         private val charactersDTO = CharactersDTO(data)
