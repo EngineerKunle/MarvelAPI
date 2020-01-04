@@ -5,6 +5,7 @@ import com.ekotech.api.NetworkOptions
 import com.ekotech.di.AppComponent
 import com.ekotech.di.DaggerAppComponent
 import com.ekotech.marvelapi.BuildConfig
+import com.ekotech.utils.convertToMD5
 
 class MarvelAPIApplication : Application() {
     private lateinit var appComponent: AppComponent
@@ -17,8 +18,19 @@ class MarvelAPIApplication : Application() {
 
     private fun createNetworkOptions(): NetworkOptions =
         NetworkOptions(
-            apiKey = BuildConfig.MARVEL_API,
-            hash = "",
-            timeStamp = 1,
+            apiKey = BuildConfig.MARVEL_API_KEY,
+            hash = createHash(),
+            timeStamp = timeStamp(),
             offSet = 500)
+
+    private fun createHash(): String {
+        val apiKey = BuildConfig.MARVEL_API_KEY
+        val privateKey = BuildConfig.MARVEL_PRIVATE_KEY
+        val timeStamp = timeStamp()
+        val hash = timeStamp.toString() + privateKey + apiKey
+
+        return hash.convertToMD5()
+    }
+
+    private fun timeStamp(): Long = System.currentTimeMillis() / 1000
 }

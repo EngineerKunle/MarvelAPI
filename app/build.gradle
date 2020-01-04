@@ -20,7 +20,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "MARVEL_URL", '"https://gateway.marvel.com:443/v1/public"')
-        buildConfigField("String", "MARVEL_API", apiKeyProperties['API_KEY'])
+        buildConfigField("String", "MARVEL_API_KEY", apiKeyProperties['API_KEY'])
         buildConfigField("String", "MARVEL_PRIVATE_KEY", apiKeyProperties['PRIVATE_KEY'])
     }
     buildTypes {
@@ -67,4 +67,7 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    //Mockk
+    testImplementation "io.mockk:mockk:$mockkVersion"
 }
