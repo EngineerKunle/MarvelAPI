@@ -1,4 +1,4 @@
-package com.ekotech.characters.model
+package com.ekotech.marvelapi.characters.model
 
 data class CharactersDTO(
     val data: Data

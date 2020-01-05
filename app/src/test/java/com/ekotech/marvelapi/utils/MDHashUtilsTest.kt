@@ -1,4 +1,4 @@
-package com.ekotech.utils
+package com.ekotech.marvelapi.utils
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

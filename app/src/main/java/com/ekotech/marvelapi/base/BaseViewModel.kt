@@ -1,4 +1,4 @@
-package com.ekotech.base
+package com.ekotech.marvelapi.base
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

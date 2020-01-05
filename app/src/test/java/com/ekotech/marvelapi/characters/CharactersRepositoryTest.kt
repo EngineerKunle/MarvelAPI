@@ -1,12 +1,12 @@
-package com.ekotech.characters
+package com.ekotech.marvelapi.characters
 
-import com.ekotech.api.AppAPI
-import com.ekotech.api.CharactersService
-import com.ekotech.api.NetworkOptions
-import com.ekotech.characters.model.CharactersDTO
-import com.ekotech.characters.model.Data
-import com.ekotech.characters.model.Result
-import com.ekotech.characters.model.Thumbnail
+import com.ekotech.marvelapi.api.AppAPI
+import com.ekotech.marvelapi.api.CharactersService
+import com.ekotech.marvelapi.api.NetworkOptions
+import com.ekotech.marvelapi.characters.model.CharactersDTO
+import com.ekotech.marvelapi.characters.model.Data
+import com.ekotech.marvelapi.characters.model.Result
+import com.ekotech.marvelapi.characters.model.Thumbnail
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

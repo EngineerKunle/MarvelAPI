@@ -1,10 +1,10 @@
-package com.ekotech.characters
+package com.ekotech.marvelapi.characters
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.ekotech.base.BaseViewModel
-import com.ekotech.characters.model.CharactersDTO
-import com.ekotech.ext.combinedObserveOnScheduleOn
+import com.ekotech.marvelapi.base.BaseViewModel
+import com.ekotech.marvelapi.characters.model.CharactersDTO
+import com.ekotech.marvelapi.ext.combinedObserveOnScheduleOn
 import javax.inject.Inject
 
 class CharactersViewModel @Inject constructor(private val repository: CharactersRepository) : BaseViewModel() {

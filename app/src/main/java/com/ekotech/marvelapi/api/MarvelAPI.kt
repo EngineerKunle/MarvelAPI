@@ -1,4 +1,4 @@
-package com.ekotech.api
+package com.ekotech.marvelapi.api
 
 import com.ekotech.marvelapi.BuildConfig
 import okhttp3.OkHttpClient

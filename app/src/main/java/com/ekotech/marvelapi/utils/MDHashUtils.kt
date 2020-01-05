@@ -1,4 +1,4 @@
-package com.ekotech.utils
+package com.ekotech.marvelapi.utils
 
 import java.io.UnsupportedEncodingException
 import java.lang.Exception
@@ -15,7 +15,9 @@ fun String.convertToMD5(): String {
         }
         return sb.toString()
     } catch (e: NoSuchAlgorithmException) {
+        e.printStackTrace()
     } catch (ex: UnsupportedEncodingException) {
+        ex.printStackTrace()
     }
     throw Exception("Could not convert String to MD5 Hash")
 }
