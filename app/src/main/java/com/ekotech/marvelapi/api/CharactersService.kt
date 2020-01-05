@@ -1,6 +1,6 @@
-package com.ekotech.api
+package com.ekotech.marvelapi.api
 
-import com.ekotech.characters.model.CharactersDTO
+import com.ekotech.marvelapi.characters.model.CharactersDTO
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

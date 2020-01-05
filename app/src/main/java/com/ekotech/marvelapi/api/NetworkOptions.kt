@@ -1,4 +1,4 @@
-package com.ekotech.api
+package com.ekotech.marvelapi.api
 
 data class NetworkOptions(
     val apiKey: String,

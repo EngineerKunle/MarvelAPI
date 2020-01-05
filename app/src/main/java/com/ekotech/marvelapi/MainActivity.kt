@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.ekotech.base.BaseActivity
-import com.ekotech.characters.CharactersViewModel
+import com.ekotech.marvelapi.base.BaseActivity
+import com.ekotech.marvelapi.characters.CharactersViewModel
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {

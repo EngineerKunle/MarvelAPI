@@ -1,6 +1,6 @@
-package com.ekotech.characters
+package com.ekotech.marvelapi.characters
 
-import com.ekotech.characters.model.CharactersDTO
+import com.ekotech.marvelapi.characters.model.CharactersDTO
 import io.reactivex.Single
 
 interface CharactersRepoService {

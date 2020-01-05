@@ -1,4 +1,4 @@
-package com.ekotech.di
+package com.ekotech.marvelapi.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

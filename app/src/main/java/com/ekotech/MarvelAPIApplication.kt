@@ -1,11 +1,11 @@
 package com.ekotech
 
 import android.app.Application
-import com.ekotech.api.NetworkOptions
-import com.ekotech.di.AppComponent
-import com.ekotech.di.DaggerAppComponent
+import com.ekotech.marvelapi.api.NetworkOptions
+import com.ekotech.marvelapi.di.AppComponent
+import com.ekotech.marvelapi.di.DaggerAppComponent
 import com.ekotech.marvelapi.BuildConfig
-import com.ekotech.utils.convertToMD5
+import com.ekotech.marvelapi.utils.convertToMD5
 
 class MarvelAPIApplication : Application() {
     private lateinit var appComponent: AppComponent

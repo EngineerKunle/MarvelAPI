@@ -1,10 +1,9 @@
-package com.ekotech.di
+package com.ekotech.marvelapi.di
 
-import com.ekotech.api.AppAPI
-import com.ekotech.api.MarvelAPI
+import com.ekotech.marvelapi.api.AppAPI
+import com.ekotech.marvelapi.api.MarvelAPI
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.Reusable
 
 @Module

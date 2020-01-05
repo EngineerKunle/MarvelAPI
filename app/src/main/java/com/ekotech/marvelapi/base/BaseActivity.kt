@@ -1,4 +1,4 @@
-package com.ekotech.base
+package com.ekotech.marvelapi.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

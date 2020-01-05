@@ -1,4 +1,4 @@
-package com.ekotech.ext
+package com.ekotech.marvelapi.ext
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData

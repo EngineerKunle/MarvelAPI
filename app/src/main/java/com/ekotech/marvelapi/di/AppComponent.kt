@@ -1,7 +1,7 @@
-package com.ekotech.di
+package com.ekotech.marvelapi.di
 
 import android.app.Application
-import com.ekotech.api.NetworkOptions
+import com.ekotech.marvelapi.api.NetworkOptions
 import com.ekotech.marvelapi.MainActivity
 import dagger.BindsInstance
 import dagger.Component
