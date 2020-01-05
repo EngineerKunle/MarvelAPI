@@ -17,5 +17,5 @@ interface AppComponent {
         fun create(@BindsInstance application: Application,@BindsInstance networkOptions: NetworkOptions): AppComponent
     }
 
-    fun inject(mainActivity: MainActivity)
+    fun inject(activity: MainActivity)
 }

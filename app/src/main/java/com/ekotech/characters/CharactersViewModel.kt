@@ -1,19 +1,33 @@
 package com.ekotech.characters
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.ekotech.base.BaseViewModel
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import com.ekotech.characters.model.CharactersDTO
+import com.ekotech.ext.combinedObserveOnScheduleOn
 import javax.inject.Inject
 
 class CharactersViewModel @Inject constructor(private val repository: CharactersRepository) : BaseViewModel() {
-    fun provideSomething() {
+
+    private val _characters: MutableLiveData<CharactersDTO> by lazy {
+        MutableLiveData<CharactersDTO>().also {
+            loadCharacters()
+        }
+    }
+
+    var characters: LiveData<CharactersDTO> = _characters
+
+    private fun loadCharacters() {
         repository.getCharacters()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                println("we got somthing here ${it.data.results.size}")
+            .combinedObserveOnScheduleOn().subscribe({
+                _characters.postValue(it)
             }, {
-                println("errrorrrr")
+                println("errror view model")
             }).addToViewModelCompositeDisposable()
+    }
+
+    private sealed class ViewStateUpdate {
+        object ShowLoading : ViewStateUpdate()
+        data class LoadedView(val characters: CharactersDTO): ViewStateUpdate()
     }
 }

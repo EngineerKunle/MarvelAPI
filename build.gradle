@@ -23,6 +23,7 @@ ext {
     okHttpVersion    = '4.2.2'
     gsonVersion      = '2.8.6'
     mockkVersion     = '1.9.3'
+    lifecyleVersion  = '2.1.0'
 }
 
 allprojects {
