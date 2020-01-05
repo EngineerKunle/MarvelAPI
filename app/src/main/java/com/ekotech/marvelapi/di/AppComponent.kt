@@ -2,7 +2,8 @@ package com.ekotech.marvelapi.di
 
 import android.app.Application
 import com.ekotech.marvelapi.api.NetworkOptions
-import com.ekotech.marvelapi.MainActivity
+import com.ekotech.marvelapi.characters.CharactersFragment
+import com.ekotech.marvelapi.main.MainActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -18,4 +19,6 @@ interface AppComponent {
     }
 
     fun inject(activity: MainActivity)
+    fun inject(fragment: CharactersFragment)
+
 }
