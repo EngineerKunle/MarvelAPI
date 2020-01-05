@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface CharactersService {
 
-    @GET("/characters")
+    @GET("/v1/public/characters")
     fun getCharacters(
         @Query("apikey")
         apiKey: String,

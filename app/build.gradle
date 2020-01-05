@@ -19,7 +19,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "MARVEL_URL", '"https://gateway.marvel.com:443/v1/public"')
+        buildConfigField("String", "MARVEL_URL", '"https://gateway.marvel.com:443"')
         buildConfigField("String", "MARVEL_API_KEY", apiKeyProperties['API_KEY'])
         buildConfigField("String", "MARVEL_PRIVATE_KEY", apiKeyProperties['PRIVATE_KEY'])
     }
@@ -70,4 +70,5 @@ dependencies {
 
     //Mockk
     testImplementation "io.mockk:mockk:$mockkVersion"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
 }
