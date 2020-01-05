@@ -14,7 +14,10 @@ class MarvelAPIApplication : Application() {
         appComponent = DaggerAppComponent.factory().create(this, createNetworkOptions())
         appComponent.inject(this)
         super.onCreate()
+        instance = this
     }
+
+    @Synchronized fun getComponent(): AppComponent = appComponent
 
     private fun createNetworkOptions(): NetworkOptions =
         NetworkOptions(
@@ -33,4 +36,9 @@ class MarvelAPIApplication : Application() {
     }
 
     private fun timeStamp(): Long = System.currentTimeMillis() / 1000
+
+    companion object {
+        lateinit var instance: MarvelAPIApplication
+        private set
+    }
 }
