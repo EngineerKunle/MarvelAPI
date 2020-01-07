@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import com.ekotech.marvelapi.base.BaseViewModel
 import com.ekotech.marvelapi.characters.model.CharactersDTO
 import com.ekotech.marvelapi.ext.combinedObserveOnScheduleOn
+import com.ekotech.marvelapi.ext.toLiveData
+import io.reactivex.subjects.BehaviorSubject
 import javax.inject.Inject
 
 class CharactersViewModel @Inject constructor(private val repository: CharactersRepository) : BaseViewModel() {
@@ -17,6 +19,13 @@ class CharactersViewModel @Inject constructor(private val repository: Characters
 
     var characters: LiveData<CharactersDTO> = _characters
 
+    private val _viewState: BehaviorSubject<ViewState> = BehaviorSubject.create()
+    var viewState: LiveData<ViewState> = _viewState.toLiveData()
+
+    init {
+        _viewState.onNext(ViewState())
+    }
+
     private fun loadCharacters() {
         repository.getCharacters()
             .combinedObserveOnScheduleOn().subscribe({
@@ -26,8 +35,6 @@ class CharactersViewModel @Inject constructor(private val repository: Characters
             }).addToViewModelCompositeDisposable()
     }
 
-    private sealed class ViewStateUpdate {
-        object ShowLoading : ViewStateUpdate()
-        data class LoadedView(val characters: CharactersDTO): ViewStateUpdate()
-    }
+    data class ViewState(private val isLoaded: Boolean? = false,
+                         private val showError: Boolean? = false)
 }
