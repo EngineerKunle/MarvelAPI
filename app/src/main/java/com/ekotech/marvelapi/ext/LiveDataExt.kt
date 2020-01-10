@@ -1,11 +1,9 @@
 package com.ekotech.marvelapi.ext
 
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.LiveDataReactiveStreams
-import io.reactivex.Flowable
-import io.reactivex.Single
+import io.reactivex.BackpressureStrategy
+import io.reactivex.subjects.BehaviorSubject
+import io.reactivex.subjects.PublishSubject
 
-fun <T> Single<T>.toLiveData(): LiveData<T> = LiveDataReactiveStreams.fromPublisher(this.toFlowable())
-
-fun <T> LiveData<T>.toFlowable(owner: LifecycleOwner): Flowable<T> = Flowable.fromPublisher(LiveDataReactiveStreams.toPublisher(owner, this))
+fun <T> BehaviorSubject<T>.toLiveData() = LiveDataReactiveStreams.fromPublisher(this.toFlowable(BackpressureStrategy.MISSING))
+fun <T> PublishSubject<T>.toLiveData() = LiveDataReactiveStreams.fromPublisher(this.toFlowable(BackpressureStrategy.MISSING))
