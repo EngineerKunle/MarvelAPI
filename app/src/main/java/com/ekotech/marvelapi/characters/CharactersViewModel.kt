@@ -9,14 +9,13 @@ import com.ekotech.marvelapi.ext.toLiveData
 import io.reactivex.subjects.BehaviorSubject
 import javax.inject.Inject
 
-class CharactersViewModel @Inject constructor(private val repository: CharactersRepository) : BaseViewModel() {
+class CharactersViewModel @Inject constructor(private val repository: CharactersRepoService) : BaseViewModel() {
 
     private val _characters: MutableLiveData<CharactersDTO> by lazy {
         MutableLiveData<CharactersDTO>().also {
             loadCharacters()
         }
     }
-
     var characters: LiveData<CharactersDTO> = _characters
 
     private val _viewState: BehaviorSubject<ViewState> = BehaviorSubject.create()
@@ -30,8 +29,10 @@ class CharactersViewModel @Inject constructor(private val repository: Characters
         repository.getCharacters()
             .combinedObserveOnScheduleOn().subscribe({
                 _characters.postValue(it)
+                _viewState.onNext(ViewState(isLoaded = true))
             }, {
                 println("errror view model")
+                _viewState.onNext(ViewState(showError = true))
             }).addToViewModelCompositeDisposable()
     }
 

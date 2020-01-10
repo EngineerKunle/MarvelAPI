@@ -28,7 +28,7 @@ class CharactersViewModelTest {
     private lateinit var charactersViewModel: CharactersViewModel
     private val charactersSubject = PublishSubject.create<CharactersDTO>()
 
-    private val charactersRepository: CharactersRepository = mockk(relaxed = true) {
+    private val charactersRepository: CharactersRepoService = mockk(relaxed = true) {
         every { getCharacters() } returns charactersSubject.firstOrError()
     }
 
