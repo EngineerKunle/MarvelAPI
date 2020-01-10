@@ -7,6 +7,7 @@ import com.ekotech.marvelapi.splash.SplashViewModel.SplashViewState
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
+import io.mockk.verifyOrder
 import io.reactivex.Completable
 import org.junit.Before
 import org.junit.Rule
@@ -40,7 +41,7 @@ class SplashViewModelTest {
 
         viewModel.launchMainScreen()
 
-        verify {
+        verifyOrder {
             observer.onChanged(SplashViewState(isFinished = false))
             observer.onChanged(SplashViewState(isFinished = true))
         }
