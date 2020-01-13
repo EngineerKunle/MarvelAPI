@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.ekotech.marvelapi.R
 import com.ekotech.marvelapi.base.BaseActivity
+import com.ekotech.marvelapi.imageloader.PicassoLoader
 import com.ekotech.marvelapi.main.MainActivity
 import javax.inject.Inject
 
@@ -24,6 +25,7 @@ class SplashActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         getComponentActivity()
             .inject(this)
+
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(SplashViewModel::class.java)
         viewModel.launchMainScreen()
         viewModel.viewState.observe(this, Observer {
