@@ -14,7 +14,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.ekotech.marvelapi"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -79,4 +79,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecyleVersion"
     implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecyleVersion"
     implementation "androidx.arch.core:core-testing:$lifecyleVersion"
+
+    //Recycler view
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

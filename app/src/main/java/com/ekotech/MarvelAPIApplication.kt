@@ -24,7 +24,7 @@ class MarvelAPIApplication : Application() {
             apiKey = BuildConfig.MARVEL_API_KEY,
             hash = createHash(),
             timeStamp = timeStamp(),
-            offSet = 500)
+            offSet = 300)
 
     private fun createHash(): String {
         val apiKey = BuildConfig.MARVEL_API_KEY

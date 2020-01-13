@@ -31,11 +31,10 @@ class CharactersViewModel @Inject constructor(private val repository: Characters
                 _characters.postValue(it)
                 _viewState.onNext(ViewState(isLoaded = true))
             }, {
-                println("errror view model")
                 _viewState.onNext(ViewState(showError = true))
             }).addToViewModelCompositeDisposable()
     }
 
-    data class ViewState(private val isLoaded: Boolean? = false,
-                         private val showError: Boolean? = false)
+    data class ViewState(val isLoaded: Boolean? = false,
+                         val showError: Boolean? = false)
 }

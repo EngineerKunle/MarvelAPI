@@ -9,12 +9,12 @@ import dagger.Module
 import dagger.Reusable
 
 @Module
-abstract class NetworkModule {
+internal abstract class NetworkModule {
     @Binds
     @Reusable
-    abstract fun providesMarvelAPI(marvelAPI: MarvelAPI): AppAPI
+    internal abstract fun providesMarvelAPI(marvelAPI: MarvelAPI): AppAPI
 
     @Binds
     @Reusable
-    abstract fun providesCharactersRepository(charactersRepository: CharactersRepository): CharactersRepoService
+    internal abstract fun providesCharactersRepository(charactersRepository: CharactersRepository): CharactersRepoService
 }

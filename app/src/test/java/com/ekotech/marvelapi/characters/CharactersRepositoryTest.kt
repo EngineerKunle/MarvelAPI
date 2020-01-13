@@ -70,7 +70,7 @@ class CharactersRepositoryTest {
         private const val EXTENSION = "mock/../"
         private const val PATH = "path/mock"
         private val thumbnail = Thumbnail(extension = EXTENSION, path = PATH)
-        private val result = Result(description = "Marvel", id = 1, thumbnail = thumbnail)
+        private val result = Result(description = "Marvel", id = 1, thumbnail = thumbnail, name = "characters")
         private val data = Data(results = listOf(result))
         private val charactersDTO = CharactersDTO(data)
     }

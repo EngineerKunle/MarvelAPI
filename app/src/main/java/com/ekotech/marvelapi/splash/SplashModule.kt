@@ -5,8 +5,8 @@ import dagger.Module
 import dagger.Reusable
 
 @Module
-abstract class SplashModule {
+internal abstract class SplashModule {
     @Binds
     @Reusable
-    abstract fun providesTimerSplash(timerSplash: TimerSplash): ITimerSplash
+    internal abstract fun providesTimerSplash(timerSplash: TimerSplash): ITimerSplash
 }
